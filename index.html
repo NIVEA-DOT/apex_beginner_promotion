@@ -1,41 +1,27 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APEX 신규회원 특별 이벤트: 7일 무료 체험 & 성공 보장 챌린지</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>APEX 첫 체험 인증 이벤트 : 무조건 혜택!</title>
     <style>
-        :root {
-            --primary-blue: #1a73e8;
-            --secondary-blue: #3f51b5;
-            --light-blue: #e3f2fd;
-            --dark-gray: #333;
-            --medium-gray: #424242;
-            --light-gray: #f9f9f9;
-            --border-gray: #e0e0e0;
-            --white: #ffffff;
-            --success-green: #4CAF50;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 
         body {
             font-family: 'Noto Sans KR', sans-serif;
             line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--light-gray);
+            color: #333;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
-            box-sizing: border-box;
         }
 
         .container {
-            background-color: var(--white);
+            background-color: #ffffff;
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -43,51 +29,34 @@
             width: 100%;
             box-sizing: border-box;
             margin: 20px 0;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
-            color: var(--primary-blue);
+            color: #1a73e8; /* Google Blue */
             text-align: center;
             margin-bottom: 30px;
-            font-size: 2.8em;
-            font-weight: 900;
-            line-height: 1.3;
-            letter-spacing: -0.5px;
-        }
-
-        h1 strong {
-            color: var(--secondary-blue);
+            font-size: 2.5em;
+            font-weight: 700;
         }
 
         h2 {
-            color: var(--secondary-blue);
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 2em;
-            font-weight: 700;
-            border-bottom: 3px solid var(--border-gray);
-            padding-bottom: 12px;
-            text-align: center;
+            color: #3f51b5; /* Deeper Blue */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
         }
 
         h3 {
-            color: var(--medium-gray);
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            font-weight: 700;
+            color: #424242;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
         }
 
         p {
             margin-bottom: 15px;
-            font-size: 1.1em;
-            line-height: 1.7;
         }
 
         ul {
@@ -97,154 +66,243 @@
         }
 
         ul li {
-            background-color: var(--light-blue);
-            padding: 15px 25px;
+            background-color: #e3f2fd; /* Light Blue */
+            padding: 12px 20px;
             border-radius: 8px;
-            margin-bottom: 12px;
-            font-size: 1.1em;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        ul li:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         ul li::before {
-            content: '✔️';
-            margin-right: 15px;
-            color: var(--primary-blue);
-            font-size: 1.3em;
+            content: '✔️'; /* Checkmark icon */
+            margin-right: 10px;
+            color: #2196f3;
+            font-weight: bold;
         }
 
         .highlight {
-            font-weight: 700;
-            color: var(--primary-blue);
+            font-weight: bold;
+            color: #d32f2f; /* Red for emphasis */
         }
 
-        .guarantee {
-            background-color: #e8f5e9;
-            border: 2px solid var(--success-green);
+        .cta-button {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+            padding: 15px 30px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #43a047;
+        }
+
+        .step-list {
+            list-style: decimal;
+            padding-left: 25px;
+        }
+
+        .step-list li {
+            background-color: transparent;
+            padding: 8px 0;
+            border-radius: 0;
+            margin-bottom: 5px;
+            display: list-item;
+        }
+
+        .step-list li::before {
+            content: none;
+        }
+
+        .note {
+            background-color: #fffde7; /* Light yellow */
+            border-left: 5px solid #ffc107; /* Amber */
+            padding: 15px 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .strong-emphasis {
+            font-weight: bold;
+            color: #1a73e8;
+        }
+
+        .quote {
+            background-color: #f0f8ff;
+            border-left: 4px solid #bbdefb;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #555;
+            border-radius: 8px;
+        }
+
+        .webinar-info {
+            background-color: #e0f2f7; /* Light cyan */
+            border: 1px solid #b3e5fc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .webinar-info h3 {
+            color: #01579b;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .webinar-info p {
+            margin-bottom: 10px;
+        }
+        .webinar-info .schedule {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #0d47a1;
+        }
+        .webinar-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background-color: #03a9f4; /* Light blue */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .webinar-link:hover {
+            background-color: #039be5;
+        }
+        .form-link-section {
+            background-color: #fce4ec; /* Light pink */
+            border: 1px solid #f8bbd0;
             padding: 25px;
             border-radius: 10px;
             margin-top: 30px;
             text-align: center;
+        }
+        .form-link-section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .form-link-section .form-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e91e63; /* Pink */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
             font-size: 1.2em;
             font-weight: 700;
-            color: var(--success-green);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: background-color 0.3s ease;
         }
-
-        .button-group {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 18px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.3em;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:hover {
-            background-color: #1565c0;
-            transform: translateY(-2px);
-        }
-
-        .note {
-            font-size: 0.95em;
-            color: #666;
-            margin-top: 25px;
-            padding: 15px;
-            background-color: #f0f0f0;
-            border-left: 5px solid var(--primary-blue);
-            border-radius: 5px;
-        }
-
-        .note strong {
-            color: var(--secondary-blue);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 25px;
-            }
-            h1 {
-                font-size: 2.2em;
-            }
-            h2 {
-                font-size: 1.7em;
-            }
-            h3 {
-                font-size: 1.3em;
-            }
-            .cta-button {
-                padding: 15px 30px;
-                font-size: 1.2em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            .container {
-                padding: 20px;
-            }
-            h1 {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            h3 {
-                font-size: 1.2em;
-            }
-            ul li {
-                padding: 12px 15px;
-                font-size: 1em;
-            }
-            .cta-button {
-                padding: 12px 25px;
-                font-size: 1em;
-            }
+        .form-link-section .form-button:hover {
+            background-color: #c2185b;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>APEX <strong>신규회원 특별 이벤트</strong></h1>
-        <p>7일 무료 체험 + 성공 보장 챌린지로 지금 바로 새로운 경험을 시작하세요! 🎯</p>
+        <h1>APEX 첫 체험 인증 이벤트 : 무조건 혜택!</h1>
+        <p class="quote">
+            "APEX, 한 번도 안 해봤는데 어렵지 않을까요?"<br>
+            "설치부터 비용까지 부담돼서 고민됩니다…"<br>
+            "먹튀 이슈 때문에 망설여져요…"<br>
+            이렇게 많은 고민과 질문을 주셨습니다.
+        </p>
 
-        <h2>혜택 안내</h2>
+        <p>그래서 준비했습니다! 이번 이벤트는 APEX를 한 번도 해보지 않은 신규회원님들을 위해, <span class="strong-emphasis">"쉽게 설치하고, 부담 없이 체험하고, 보상까지 받을 수 있도록"</span> 기획된 특별 이벤트입니다!</p>
+
+        ---
+        <h2>✨ 참여 대상</h2>
         <ul>
-            <li>신규 가입 시 7일간 완전 무료 체험</li>
-            <li>초보자도 쉽게 따라할 수 있는 단계별 가이드 제공</li>
-            <li>성공 보장 챌린지 참여 기회</li>
-            <li>참여만 해도 추가 보너스 혜택</li>
+            <li>APEX를 한 번도 설치하거나 사용해본 적 없는 <span class="highlight">신규 회원</span></li>
         </ul>
 
-        <div class="guarantee">
-            🎉 지금 시작하면 100% 성공 보장! 실패 시 전액 환불까지!
-        </div>
+        ---
+        <h2>🎁 참여 혜택</h2>
+        <p>참여자 <span class="highlight">최대 XX명</span>에게 드리는 특별 혜택!</p>
+        <ul>
+            <li>
+                <h3>EVAL 계좌 ($33) <span class="strong-emphasis">무료쿠폰 지급</span></h3>
+                <p>APEX 첫 체험을 위한 EVAL 계좌 쿠폰을 <span class="highlight">무료</span>로 드립니다. 초기 비용 걱정 없이 APEX를 시작하세요!</p>
+            </li>
+            <li>
+                <h3>첫 번째 계좌(신규 체험 계좌) EVAL 통과 시 <span class="strong-emphasis">PA 계좌 비용 100% 지급 ($167 상당)</span></h3>
+                <p>APEX의 신규 체험 계좌(예: 001 계좌)로 EVAL 미션을 성공적으로 통과하시면, <span class="highlight">PA 계좌 전환 비용 $167를 전액 지원</span>해 드립니다. 당신의 노력이 현실적인 수익으로 이어지도록 APEX가 함께합니다!</p>
+                <p style="font-size: 0.9em; color: #666;">(※ EVAL 통과 조건은 APEX 공식 웹사이트 또는 가이드라인을 참고해 주세요.)</p>
+            </li>
+        </ul>
 
-        <div class="button-group">
-            <a href="#" class="cta-button">지금 무료 체험하기</a>
-        </div>
+        ---
+        <h2>🗓️ 참여 기간</h2>
+        <p>지금 바로 참여하세요! <span class="highlight">2025년 8월 15일까지</span> 가입자에 한해 이벤트가 적용됩니다.</p>
 
+        ---
+        <h2>🚀 참여 방식</h2>
+        <ol class="step-list">
+            <li>
+                <h3>Step 1) APEX 설치 & 신규 체험 계좌 신청</h3>
+                <p>APEX를 설치하시고, 신규 회원으로 가입하여 체험 계좌를 신청해 주세요. (가입 및 설치에 대한 자세한 가이드는 <a href="#" class="strong-emphasis">여기</a>를 클릭하세요.)</p>
+            </li>
+            <li>
+                <h3>Step 2) 3일간 체험 후 후기 작성</h3>
+                <p>APEX를 3일간 자유롭게 체험해 보시고, 체험 후기를 솔직하게 작성하여 제출해 주세요.</p>
+            </li>
+            <li>
+                <h3>Step 3) 신규 체험 계좌 EVAL 통과 인증 & PA 계좌 지급</h3>
+                <p>신규 체험 계좌로 EVAL 미션을 성공적으로 통과하신 후, 이벤트 신청 폼을 통해 인증해 주시면 PA 계좌 비용이 지급됩니다.</p>
+            </li>
+        </ol>
+
+        ---
+        <h2>⚠️ 유의사항</h2>
         <div class="note">
-            <strong>※ 참고:</strong> 본 이벤트는 신규회원 한정으로 진행되며, 자세한 조건은 별도 안내 페이지를 참고해주세요.
+            <ul>
+                <li>본 이벤트는 APEX 신규 체험 회원만 참여 가능합니다.</li>
+                <li>혜택 지급을 위한 모든 인증(후기 작성, EVAL 통과 증명)은 이벤트 신청 폼을 통해 진행됩니다.</li>
+                <li>이벤트 기간 이후 참여는 혜택 제공이 불가합니다.</li>
+                <li>본 이벤트는 당사 사정에 따라 사전 고지 없이 변경 또는 조기 종료될 수 있습니다.</li>
+            </ul>
         </div>
+
+        ---
+        <h2>🗣️ 추가 혜택! 설치 Q&A 웨비나 진행 안내</h2>
+        <div class="webinar-info">
+            <h3>"설치가 너무 어렵습니다…" "잘못 건드렸다가 뭔가 꼬일까 봐 불안해요!"<br>"혹시 Q&A 같은 게 있나요?"</h3>
+            <p><span class="strong-emphasis">네! 이런 걱정을 단번에 해결해드리기 위해,</span></p>
+            <p>APEX Q&A 웨비나를 별도로 준비했습니다!</p>
+            <ul>
+                <li><p style="background-color: transparent;">PROP 회사가 뭔지?</p></li>
+                <li><p style="background-color: transparent;">APEX가 뭔지?</p></li>
+                <li><p style="background-color: transparent;">가입설치 Q&A</p></li>
+            </ul>
+            <p class="schedule"><strong>웨비나 일정: 매주 목요일 9시 ~ 10시</strong></p>
+            <p style="font-size: 0.9em; color: #555;">(유튜브 비공개 라이브 - 참여 신청자에게 private link 발송)</p>
+            <a href="#" class="webinar-link" onclick="alert('웨비나 참여 신청 링크는 추후 공지됩니다. 이벤트 신청 폼을 통해 신청해 주세요!'); return false;">웨비나 참여 신청하기</a>
+        </div>
+
+        ---
+        <h2>📝 이벤트 신청 및 인증하기</h2>
+        <div class="form-link-section">
+            <p>본 이벤트에 참여하고 혜택을 받으시려면, 아래 버튼을 눌러 신청 폼을 작성해 주세요.</p>
+            <p>신청 폼에서 본인의 이메일 주소, 비상 연락망을 남기고, 필요한 인증 사진(예: APEX 설치 및 첫 실행 화면, EVAL 통과 증명 스크린샷 등)을 업로드할 수 있습니다.</p>
+            <a href="[구글 폼 또는 네이버 폼 링크 삽입]" target="_blank" class="form-button">이벤트 신청 폼 작성하기</a>
+            <p style="font-size: 0.85em; color: #777; margin-top: 20px;">
+                * 본 폼은 안전한 개인 정보 수집을 위해 Google Forms (또는 Naver Forms)를 활용합니다.<br>
+                * 제공해 주신 정보는 이벤트 혜택 지급 및 소통 목적으로만 사용되며, 철저히 보호됩니다.
+            </p>
+        </div>
+
     </div>
 </body>
 </html>
