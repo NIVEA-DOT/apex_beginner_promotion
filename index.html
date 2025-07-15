@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #1a73e8; /* Google Blue */
-            --secondary-blue: #3f51b5; /* Deeper Blue */
-            --light-blue: #e3f2fd; /* Light Blue */
+            --primary-blue: #1a73e8;
+            --secondary-blue: #3f51b5;
+            --light-blue: #e3f2fd;
             --dark-gray: #333;
             --medium-gray: #424242;
             --light-gray: #f9f9f9;
@@ -56,7 +56,7 @@
             text-align: center;
             margin-bottom: 30px;
             font-size: 2.8em;
-            font-weight: 900; /* Extra bold for main title */
+            font-weight: 900;
             line-height: 1.3;
             letter-spacing: -0.5px;
         }
@@ -114,7 +114,7 @@
         }
 
         ul li::before {
-            content: '✔️'; /* Checkmark icon */
+            content: '✔️';
             margin-right: 15px;
             color: var(--primary-blue);
             font-size: 1.3em;
@@ -126,7 +126,7 @@
         }
 
         .guarantee {
-            background-color: #e8f5e9; /* Light green */
+            background-color: #e8f5e9;
             border: 2px solid var(--success-green);
             padding: 25px;
             border-radius: 10px;
@@ -157,7 +157,7 @@
         }
 
         .cta-button:hover {
-            background-color: #1565c0; /* Darker blue on hover */
+            background-color: #1565c0;
             transform: translateY(-2px);
         }
 
@@ -216,4 +216,35 @@
             }
             .cta-button {
                 padding: 12px 25px;
-                font-size
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>APEX <strong>신규회원 특별 이벤트</strong></h1>
+        <p>7일 무료 체험 + 성공 보장 챌린지로 지금 바로 새로운 경험을 시작하세요! 🎯</p>
+
+        <h2>혜택 안내</h2>
+        <ul>
+            <li>신규 가입 시 7일간 완전 무료 체험</li>
+            <li>초보자도 쉽게 따라할 수 있는 단계별 가이드 제공</li>
+            <li>성공 보장 챌린지 참여 기회</li>
+            <li>참여만 해도 추가 보너스 혜택</li>
+        </ul>
+
+        <div class="guarantee">
+            🎉 지금 시작하면 100% 성공 보장! 실패 시 전액 환불까지!
+        </div>
+
+        <div class="button-group">
+            <a href="#" class="cta-button">지금 무료 체험하기</a>
+        </div>
+
+        <div class="note">
+            <strong>※ 참고:</strong> 본 이벤트는 신규회원 한정으로 진행되며, 자세한 조건은 별도 안내 페이지를 참고해주세요.
+        </div>
+    </div>
+</body>
+</html>
