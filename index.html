@@ -1,27 +1,41 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APEX 7일 무료 체험 & 성공 보장 챌린지</title>
+    <title>APEX 신규회원 특별 이벤트: 7일 무료 체험 & 성공 보장 챌린지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+        :root {
+            --primary-blue: #1a73e8; /* Google Blue */
+            --secondary-blue: #3f51b5; /* Deeper Blue */
+            --light-blue: #e3f2fd; /* Light Blue */
+            --dark-gray: #333;
+            --medium-gray: #424242;
+            --light-gray: #f9f9f9;
+            --border-gray: #e0e0e0;
+            --white: #ffffff;
+            --success-green: #4CAF50;
+        }
 
         body {
             font-family: 'Noto Sans KR', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            box-sizing: border-box;
         }
 
         .container {
-            background-color: #ffffff;
+            background-color: var(--white);
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -29,34 +43,51 @@
             width: 100%;
             box-sizing: border-box;
             margin: 20px 0;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
-            color: #1a73e8; /* Google Blue */
+            color: var(--primary-blue);
             text-align: center;
             margin-bottom: 30px;
-            font-size: 2.5em;
-            font-weight: 700;
+            font-size: 2.8em;
+            font-weight: 900; /* Extra bold for main title */
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+        }
+
+        h1 strong {
+            color: var(--secondary-blue);
         }
 
         h2 {
-            color: #3f51b5; /* Deeper Blue */
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 8px;
+            color: var(--secondary-blue);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            font-weight: 700;
+            border-bottom: 3px solid var(--border-gray);
+            padding-bottom: 12px;
+            text-align: center;
         }
 
         h3 {
-            color: #424242;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 1.3em;
+            color: var(--medium-gray);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            font-weight: 700;
         }
 
         p {
             margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.7;
         }
 
         ul {
@@ -66,7 +97,123 @@
         }
 
         ul li {
-            background-color: #e3f2fd; /* Light Blue */
-            padding: 12px 20px;
+            background-color: var(--light-blue);
+            padding: 15px 25px;
             border-radius: 8px;
-            margin-
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        ul li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul li::before {
+            content: '✔️'; /* Checkmark icon */
+            margin-right: 15px;
+            color: var(--primary-blue);
+            font-size: 1.3em;
+        }
+
+        .highlight {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .guarantee {
+            background-color: #e8f5e9; /* Light green */
+            border: 2px solid var(--success-green);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--success-green);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #1565c0; /* Darker blue on hover */
+            transform: translateY(-2px);
+        }
+
+        .note {
+            font-size: 0.95em;
+            color: #666;
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-left: 5px solid var(--primary-blue);
+            border-radius: 5px;
+        }
+
+        .note strong {
+            color: var(--secondary-blue);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.7em;
+            }
+            h3 {
+                font-size: 1.3em;
+            }
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            ul li {
+                padding: 12px 15px;
+                font-size: 1em;
+            }
+            .cta-button {
+                padding: 12px 25px;
+                font-size
