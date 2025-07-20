@@ -1,283 +1,313 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>APEX 첫 체험 인증 이벤트 : 무조건 혜택!</title>
-    <meta name="description" content="APEX 신규회원 대상 첫 체험 인증 이벤트! 지금 무료 EVAL 계좌 쿠폰 받고 PA 계좌 전환 비용 100% 지원 혜택까지!">
-    <meta property="og:title" content="APEX 첫 체험 인증 이벤트 : 무조건 혜택!">
-    <meta property="og:description" content="APEX 신규회원 대상 첫 체험 인증 이벤트! 지금 무료 EVAL 계좌 쿠폰 받고 PA 계좌 전환 비용 100% 지원 혜택까지!">
-    <meta property="og:type" content="website">
-    <!-- 구글 폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신랑 ♡ 신부 결혼합니다</title>
     <style>
+        /* 기본 스타일 */
         body {
-            font-family: 'Noto Sans KR', sans-serif;
+            font-family: 'Noto Sans KR', sans-serif; /* 한국어 폰트 지정, 필요시 웹폰트 연결 */
             line-height: 1.6;
             color: #333;
-            background-color: #f9f9f9;
+            background-color: #f8f8f8;
             margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
         }
+
         .container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
             box-sizing: border-box;
-            margin: 20px 0;
         }
-        h1 {
-            color: #1a73e8;
+
+        h1, h2, h3 {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            font-weight: 700;
+            color: #555;
+            margin-bottom: 20px;
         }
-        h2 {
-            color: #3f51b5;
+
+        h1 {
+            font-size: 2.2em;
             margin-top: 30px;
-            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        h2 {
             font-size: 1.8em;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 8px;
+            margin-top: 40px;
         }
+
         h3 {
-            color: #424242;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 1.3em;
+            font-size: 1.4em;
+            margin-top: 30px;
         }
+
         p {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        /* 메인 섹션 */
+        .main-section .names {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #777;
             margin-bottom: 15px;
         }
-        ul {
+        .main-section .date-time {
+            font-size: 1.2em;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .main-section .message {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            padding: 0 20px;
+        }
+
+        /* 갤러리 섹션 (사진 추가 시) */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 250px; /* 적당한 크기로 조절 */
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* 오시는 길 섹션 */
+        .location-info p {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .location-info .map-image {
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .transport-info {
+            text-align: left;
+            padding: 0 20px;
+            font-size: 0.95em;
+        }
+        .transport-info h4 {
+            font-size: 1.1em;
+            color: #666;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .transport-info ul {
             list-style: none;
             padding: 0;
-            margin-bottom: 20px;
+            margin: 0;
         }
-        ul li {
-            background-color: #e3f2fd;
-            padding: 12px 20px;
-            border-radius: 8px;
-            margin-bottom: 10px;
+        .transport-info li {
+            margin-bottom: 8px;
+            text-align: center; /* 필요에 따라 left로 변경 가능 */
+        }
+        .transport-info .note {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* 축하/전달 섹션 */
+        .contact-info .btn-group {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+            padding: 0 20px;
         }
-        ul li::before {
-            content: '✔️';
-            margin-right: 10px;
-            color: #2196f3;
-            font-weight: bold;
-        }
-        .highlight {
-            font-weight: bold;
-            color: #d32f2f;
-        }
-        .cta-button {
+        .contact-info .btn {
             display: block;
-            width: fit-content;
-            margin: 30px auto;
-            padding: 15px 30px;
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.2em;
-            font-weight: 700;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #43a047;
-        }
-        .step-list {
-            list-style: decimal;
-            padding-left: 25px;
-        }
-        .step-list li {
-            background-color: transparent;
-            padding: 8px 0;
-            border-radius: 0;
-            margin-bottom: 5px;
-            display: list-item;
-        }
-        .note {
-            background-color: #fffde7;
-            border-left: 5px solid #ffc107;
-            padding: 15px 20px;
-            margin-top: 30px;
-            border-radius: 8px;
-            font-size: 0.95em;
-            color: #555;
-        }
-        .strong-emphasis {
-            font-weight: bold;
-            color: #1a73e8;
-        }
-        .quote {
-            background-color: #f0f8ff;
-            border-left: 4px solid #bbdefb;
-            padding: 15px 20px;
-            margin: 25px 0;
-            font-style: italic;
-            color: #555;
-            border-radius: 8px;
-        }
-        .webinar-info {
-            background-color: #e0f2f7;
-            border: 1px solid #b3e5fc;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        .webinar-info h3 {
-            color: #01579b;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-        .webinar-info p {
-            margin-bottom: 10px;
-        }
-        .webinar-info .schedule {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #0d47a1;
-        }
-        .webinar-link {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 25px;
-            background-color: #03a9f4;
-            color: white;
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #a0a0a0; /* 버튼 색상 */
+            color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            font-weight: bold;
+            font-size: 1.1em;
+            text-align: center;
             transition: background-color 0.3s ease;
         }
-        .webinar-link:hover {
-            background-color: #039be5;
+        .contact-info .btn:hover {
+            background-color: #888;
         }
-        .form-link-section {
-            background-color: #fce4ec;
-            border: 1px solid #f8bbd0;
-            padding: 25px;
-            border-radius: 10px;
+
+        .contact-info .account-info {
             margin-top: 30px;
             text-align: center;
+            font-size: 0.95em;
+            line-height: 1.6;
         }
-        .form-link-section p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
+        .contact-info .account-info strong {
+            display: block;
+            margin-top: 5px;
+            color: #555;
         }
-        .form-link-section .form-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #e91e63;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.2em;
-            font-weight: 700;
-            transition: background-color 0.3s ease;
+        .contact-info .note-right {
+            text-align: right;
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 20px;
+            padding-right: 20px;
         }
-        .form-link-section .form-button:hover {
-            background-color: #c2185b;
+        .contact-info .text-right {
+            text-align: right;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #777;
+            padding-right: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85em;
+            color: #999;
+            margin-top: 30px;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            .main-section .names {
+                font-size: 1.6em;
+            }
+            .main-section .date-time {
+                font-size: 1em;
+            }
+            .main-section .message {
+                font-size: 1em;
+                padding: 0 15px;
+            }
+            .transport-info {
+                padding: 0 15px;
+            }
+            .contact-info .btn {
+                font-size: 1em;
+                padding: 10px 15px;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>APEX 첫 체험 인증 이벤트 : 무조건 혜택!</h1>
-        <p class="quote">
-            "APEX, 한 번도 안 해봤는데 어렵지 않을까요?"<br>
-            "설치부터 비용까지 부담돼서 고민됩니다…"<br>
-            "먹튀 이슈 때문에 망설여져요…"<br>
-            이렇게 많은 고민과 질문을 주셨습니다.
-        </p>
 
-        <p>그래서 준비했습니다! 이번 이벤트는 APEX를 한 번도 해보지 않은 신규회원님들을 위해, <span class="strong-emphasis">"쉽게 설치하고, 부담 없이 체험하고, 보상까지 받을 수 있도록"</span> 기획된 특별 이벤트입니다!</p>
-
-        <h2>✨ 참여 대상</h2>
-        <ul>
-            <li>APEX를 한 번도 설치하거나 사용해본 적 없는 <span class="highlight">신규 회원</span></li>
-        </ul>
-
-        <h2>🎁 참여 혜택</h2>
-        <p>참여자 <span class="highlight">최대 XX명</span>에게 드리는 특별 혜택!</p>
-        <ul>
-            <li>
-                <h3>EVAL 계좌 ($33) <span class="strong-emphasis">무료쿠폰 지급</span></h3>
-                <p>APEX 첫 체험을 위한 EVAL 계좌 쿠폰을 <span class="highlight">무료</span>로 드립니다. 초기 비용 걱정 없이 APEX를 시작하세요!</p>
-            </li>
-            <li>
-                <h3>첫 번째 계좌 EVAL 통과 시 <span class="strong-emphasis">PA 계좌 비용 100% 지급 ($167)</span></h3>
-                <p>신규 체험 계좌로 EVAL 미션을 성공적으로 통과하시면, <span class="highlight">PA 계좌 전환 비용 $167를 전액 지원</span>해 드립니다!</p>
-                <p style="font-size: 0.9em; color: #666;">(※ EVAL 통과 조건은 APEX 공식 웹사이트 또는 가이드라인 참고)</p>
-            </li>
-        </ul>
-
-        <h2>🗓️ 참여 기간</h2>
-        <p>지금 바로 참여하세요! <span class="highlight">2025년 8월 15일까지</span> 가입자에 한해 적용됩니다.</p>
-
-        <h2>🚀 참여 방식</h2>
-        <ol class="step-list">
-            <li>
-                <h3>Step 1) APEX 설치 & 신규 체험 계좌 신청</h3>
-                <p>APEX를 설치하고 신규 회원으로 가입 후 체험 계좌를 신청하세요. (<a href="#" class="strong-emphasis">가입 가이드 보기</a>)</p>
-            </li>
-            <li>
-                <h3>Step 2) 3일간 체험 후 후기 작성</h3>
-                <p>3일간 자유롭게 체험 후 솔직한 후기를 작성해 주세요.</p>
-            </li>
-            <li>
-                <h3>Step 3) EVAL 통과 인증 & PA 계좌 지급</h3>
-                <p>통과 후 이벤트 신청 폼에 인증하면 PA 계좌 비용이 지급됩니다.</p>
-            </li>
-        </ol>
-
-        <h2>⚠️ 유의사항</h2>
-        <div class="note">
-            <ul>
-                <li>신규 체험 회원만 참여 가능합니다.</li>
-                <li>모든 인증은 이벤트 신청 폼으로 제출해야 합니다.</li>
-                <li>기간 이후 참여는 혜택 불가합니다.</li>
-                <li>사정에 따라 변경 또는 조기 종료될 수 있습니다.</li>
-            </ul>
-        </div>
-
-        <h2>🗣️ 추가 혜택! 설치 Q&A 웨비나</h2>
-        <div class="webinar-info">
-            <h3>"설치가 어렵습니다…" "잘못될까 불안해요!" "Q&A가 있나요?"</h3>
-            <p><span class="strong-emphasis">네! 이런 걱정을 해결해드립니다.</span></p>
-            <p>APEX Q&A 웨비나를 준비했습니다!</p>
-            <ul>
-                <li><p style="background-color: transparent;">PROP 회사란?</p></li>
-                <li><p style="background-color: transparent;">APEX란?</p></li>
-                <li><p style="background-color: transparent;">가입/설치 Q&A</p></li>
-            </ul>
-            <p class="schedule"><strong>매주 목요일 9시 ~ 10시</strong></p>
-            <p style="font-size: 0.9em; color: #555;">(유튜브 비공개 라이브 — 신청자에게 private 링크 발송)</p>
-            <a href="#" class="webinar-link" onclick="alert('웨비나 신청 링크는 추후 공지됩니다. 이벤트 신청 폼을 통해 신청해주세요!'); return false;" role="button" aria-label="웨비나 신청하기">웨비나 신청하기</a>
-        </div>
-
-        <h2>📝 이벤트 신청 및 인증</h2>
-        <div class="form-link-section">
-            <p>아래 버튼을 눌러 신청 폼을 작성해 주세요.</p>
-            <p>이메일, 연락처, 인증 사진(설치 화면, EVAL 통과 증명 등)을 업로드하실 수 있습니다.</p>
-            <a href="[구글 폼 링크]" target="_blank" class="form-button">이벤트 신청 폼 작성하기</a>
-            <p style="font-size: 0.85em; color: #777; margin-top: 20px;">
-                * 본 폼은 Google Forms 또는 Naver Forms로 안전하게 운영됩니다.<br>
-                * 모든 정보는 혜택 지급 및 소통 목적으로만 사용됩니다.
+        <section class="section main-section">
+            <p style="font-family: 'Times New Roman', serif; font-size: 1.5em; color: #888; letter-spacing: 1px; margin-bottom: 20px;">Wedding Invitation</p>
+            <p class="names">신랑 OOO &nbsp; ♡ &nbsp; 신부 OOO</p>
+            <p class="date-time">2025.09.06 SAT PM 1:00</p>
+            <h1>결혼합니다.</h1>
+            <p class="message">
+                하나님이 보내준 사람으로<br>
+                하나가 되는 뜻깊은 날을 맞이하게 되었습니다.<br>
+                서로에게 쉼과 위로가 되겠습니다.<br>
+                믿음과 소망 사랑을 잃지 않고 품어주며 살겠습니다.<br>
+                따뜻한 축복을 보내주시면 큰 힘이 되겠습니다.
             </p>
-        </div>
+        </section>
+
+        <section class="section gallery-section">
+            <h2>Our Story</h2>
+            <div class="gallery">
+                <p style="color: #aaa; font-size: 0.9em;">(여기에 웨딩 사진을 추가해주세요)</p>
+            </div>
+        </section>
+
+        <section class="section location-section">
+            <h2 style="font-family: 'Times New Roman', serif; font-size: 1.8em; color: #888; letter-spacing: 1px;">Location</h2>
+            <div class="location-info">
+                <p style="font-weight: bold; font-size: 1.1em; color: #555;">신당중앙교회</p>
+                <p>서울특별시 중구 다산로 165</p>
+                <img src="image_fed8bf.png" alt="신당중앙교회 약도" class="map-image">
+            </div>
+
+            <div class="transport-info">
+                <h4>오시는 길</h4>
+                <ul>
+                    <li><strong>지하철:</strong></li>
+                    <li>3·6호선 약수역 2번출구 (300m)</li>
+                    <li>5·6호선 청구역 1번출구 (200m)</li>
+                    <li><strong>버스:</strong></li>
+                    <li>신당동(청구역) : 142, 147, 0212, 6211</li>
+                </ul>
+                <p class="note">
+                    주차 공간이 협소하여, 가급적 따뜻한 마음으로<br>
+                    대중교통을 이용해주시면 감사하겠습니다.
+                </p>
+            </div>
+        </section>
+
+        <section class="section contact-info">
+            <h2>축하의 마음 전달</h2>
+            <p style="text-align: center;">
+                축하의 마음으로 참석해 주실<br>
+                모든 분을 정중히 모시고자 하오니,<br>
+                참석 여부를 알려주시면 감사하겠습니다.
+            </p>
+            <div class="btn-group">
+                <a href="tel:000-0000-0000" class="btn">신랑에게 연락하기</a> <a href="tel:000-0000-0000" class="btn">신부에게 연락하기</a> <a href="#" class="btn" onclick="alert('참석 여부 확인 링크 또는 기능이 필요합니다.'); return false;">참석 여부 전달하기</a>
+            </div>
+
+            <h3 style="margin-top: 50px;">새로운 시작을 축하하며</h3>
+            <p class="note-right">축하 화환은 정중히 사양합니다.<br>감사한 마음만 받겠습니다.</p>
+            <p class="text-right" style="margin-bottom: 30px;">
+                (단, 바른손플라워를 통한 화환 선물은 가능합니다.)
+            </p>
+            <div class="account-info">
+                <p><strong>신랑 측 계좌번호</strong></p>
+                <p>계좌번호: 000-00-000000 (예금주: 신랑 OOO)</p>
+                <p><strong>신부 측 계좌번호</strong></p>
+                <p>계좌번호: 000-00-000000 (예금주: 신부 OOO)</p>
+            </div>
+            <div class="btn-group" style="margin-top: 30px;">
+                <a href="#" class="btn" onclick="alert('화환 선물하기 페이지 또는 정보가 필요합니다.'); return false;">화환 선물하기 (바른손플라워)</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 신랑 OOO & 신부 OOO. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
