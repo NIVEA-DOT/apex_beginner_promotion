@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>프랍 트레이딩 명예의 전당</title>
+    <title>프랍 트레이딩 명예의 전당 - 전체 랭킹</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            background-color: #f4f7f6;
+            background-color: #f0f2f5;
             color: #333;
             line-height: 1.6;
             margin: 0;
@@ -23,141 +23,106 @@
         .container {
             background-color: #ffffff;
             border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             padding: 40px;
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             box-sizing: border-box;
             text-align: center;
         }
 
         h1 {
+            font-family: 'Montserrat', sans-serif;
             color: #2c3e50;
-            font-size: 2.8em;
-            margin-bottom: 15px;
+            font-size: 3em;
+            margin-bottom: 10px;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.08);
         }
 
         .header-description {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #555;
             margin-bottom: 40px;
-            border-bottom: 2px solid #eee;
+            border-bottom: 2px solid #e0e0e0;
             padding-bottom: 20px;
         }
 
-        .award-section {
-            margin-bottom: 40px;
-            padding: 30px;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            position: relative;
-            overflow: hidden;
-            text-align: left;
-        }
-
-        .award-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .award-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .ranking-table {
             width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
-            z-index: 0;
-            filter: blur(5px);
+            border-collapse: collapse;
+            margin-top: 30px;
         }
 
-        .award-content {
-            position: relative;
-            z-index: 1;
-            padding: 10px;
+        .ranking-table th, .ranking-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
         }
 
-        .award-section h2 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
+        .ranking-table th {
+            background-color: #e9ecef;
+            color: #495057;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            color: #fff; /* Default color, will be overridden */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .award-section h2 .icon {
-            margin-right: 15px;
-            font-size: 1.2em;
-            line-height: 1;
-        }
-
-        .award-section p {
             font-size: 1.1em;
-            color: #f8f9fa; /* Default color, will be overridden */
-            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .award-section p strong {
-            color: #fff;
+        .ranking-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
 
-        /* Specific colors and backgrounds for each rank */
-        .rank-1 {
-            background: linear-gradient(135deg, #FFD700 0%, #FFB100 100%); /* Gold */
-            border: 3px solid #FFC107;
-        }
-        .rank-1 h2, .rank-1 p {
-            color: #8B4513; /* Darker brown for contrast */
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
-        }
-        .rank-1 p strong {
-            color: #A0522D;
+        .ranking-table tbody tr:hover {
+            background-color: #e6f7ff;
+            transform: scale(1.01);
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
-
-        .rank-2 {
-            background: linear-gradient(135deg, #C0C0C0 0%, #A9A9A9 100%); /* Silver */
-            border: 3px solid #B0C4DE;
+        .rank-highlight-1 {
+            background: linear-gradient(90deg, #ffd70033 0%, #ffffff00 100%);
+            font-weight: 700;
+            color: #a67c00;
         }
-        .rank-2 h2, .rank-2 p {
-            color: #2F4F4F; /* Dark slate gray */
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        .rank-highlight-2 {
+            background: linear-gradient(90deg, #c0c0c033 0%, #ffffff00 100%);
+            font-weight: 700;
+            color: #6a6a6a;
         }
-        .rank-2 p strong {
-            color: #4682B4;
-        }
-
-        .rank-3 {
-            background: linear-gradient(135deg, #CD7F32 0%, #B87333 100%); /* Bronze */
-            border: 3px solid #D2B48C;
-        }
-        .rank-3 h2, .rank-3 p {
-            color: #5C4033; /* Darker brown */
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
-        }
-        .rank-3 p strong {
-            color: #8B4513;
+        .rank-highlight-3 {
+            background: linear-gradient(90deg, #cd7f3233 0%, #ffffff00 100%);
+            font-weight: 700;
+            color: #8b4513;
         }
 
+        .rank-number {
+            font-weight: 700;
+            color: #34495e;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .nickname {
+            font-weight: 600;
+            color: #2980b9;
+        }
+        .payout-amount {
+            color: #28a745;
+            font-weight: 600;
+        }
+        .payout-count {
+            color: #6c757d;
+        }
 
         .footer-note {
-            font-size: 1em;
+            font-size: 0.95em;
             color: #666;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 2px solid #eee;
+            border-top: 2px solid #e0e0e0;
         }
 
         .signature {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #888;
             margin-top: 10px;
         }
@@ -165,37 +130,311 @@
 </head>
 <body>
     <div class="container">
-        <h1>프랍 트레이딩 명예의 전당</h1>
-        <p class="header-description">2024년 10월부터 시작된 올타임 출금 랭킹에서 빛나는 성과를 거둔 상위 3인에게 아낌없는 박수를 보냅니다!</p>
+        <h1>🏆 프랍 트레이딩 명예의 전당 🏆</h1>
+        <p class="header-description">2024년 10월부터 시작된 올타임 출금 랭킹에 이름을 올린 모든 분들께 경의를 표합니다!</p>
 
-        <div class="award-section rank-1">
-            <div class="award-content">
-                <h2><span class="icon">🥇</span> 1위: SpaceRanger7</h2>
-                <p><strong>출금 금액:</strong> $341,558</p>
-                <p><strong>출금 횟수:</strong> 9회</p>
-                <p>최고의 자리에 등극한 **SpaceRanger7**님은 압도적인 출금 금액과 꾸준한 성과로 모두의 귀감이 되고 있습니다. 9번의 출금은 그야말로 꾸준함의 대명사입니다.</p>
-            </div>
-        </div>
+        <table class="ranking-table">
+            <thead>
+                <tr>
+                    <th>랭킹</th>
+                    <th>닉네임</th>
+                    <th>출금 금액</th>
+                    <th>출금 횟수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="rank-highlight-1">
+                    <td class="rank-number">1</td>
+                    <td class="nickname">SpaceRanger7</td>
+                    <td class="payout-amount">$341,558</td>
+                    <td class="payout-count">9</td>
+                </tr>
+                <tr class="rank-highlight-2">
+                    <td class="rank-number">2</td>
+                    <td class="nickname">사즉생</td>
+                    <td class="payout-amount">$65,484</td>
+                    <td class="payout-count">6</td>
+                </tr>
+                <tr class="rank-highlight-3">
+                    <td class="rank-number">3</td>
+                    <td class="nickname">할아버지</td>
+                    <td class="payout-amount">$56,652</td>
+                    <td class="payout-count">7</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">4</td>
+                    <td class="nickname">조프링</td>
+                    <td class="payout-amount">$46,000</td>
+                    <td class="payout-count">8</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">5</td>
+                    <td class="nickname">Luvyrguts</td>
+                    <td class="payout-amount">$42,875</td>
+                    <td class="payout-count">3</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">6</td>
+                    <td class="nickname">레드엘</td>
+                    <td class="payout-amount">$40,945</td>
+                    <td class="payout-count">4</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">7</td>
+                    <td class="nickname">키드온더루프</td>
+                    <td class="payout-amount">$34,746</td>
+                    <td class="payout-count">8</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">8</td>
+                    <td class="nickname">플라룽우</td>
+                    <td class="payout-amount">$32,510</td>
+                    <td class="payout-count">12</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">9</td>
+                    <td class="nickname">personna</td>
+                    <td class="payout-amount">$31,300</td>
+                    <td class="payout-count">5</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">10</td>
+                    <td class="nickname">메루</td>
+                    <td class="payout-amount">$30,000</td>
+                    <td class="payout-count">4</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">11</td>
+                    <td class="nickname">batman</td>
+                    <td class="payout-amount">$20,759</td>
+                    <td class="payout-count">2</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">12</td>
+                    <td class="nickname">HopeJuno</td>
+                    <td class="payout-amount">$16,270</td>
+                    <td class="payout-count">6</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">13</td>
+                    <td class="nickname">갈굼1</td>
+                    <td class="payout-amount">$15,620</td>
+                    <td class="payout-count">6</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">14</td>
+                    <td class="nickname">구스범스</td>
+                    <td class="payout-amount">$15,416</td>
+                    <td class="payout-count">3</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">15</td>
+                    <td class="nickname">벤킴</td>
+                    <td class="payout-amount">$14,500</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">16</td>
+                    <td class="nickname">Taho</td>
+                    <td class="payout-amount">$13,500</td>
+                    <td class="payout-count">6</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">17</td>
+                    <td class="nickname">jaebanggul</td>
+                    <td class="payout-amount">$12,873</td>
+                    <td class="payout-count">8</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">18</td>
+                    <td class="nickname">kcw</td>
+                    <td class="payout-amount">$10,000</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">19</td>
+                    <td class="nickname">그럴수있어</td>
+                    <td class="payout-amount">$9,700</td>
+                    <td class="payout-count">5</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">20</td>
+                    <td class="nickname">메고</td>
+                    <td class="payout-amount">$7,800</td>
+                    <td class="payout-count">4</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">21</td>
+                    <td class="nickname">부추</td>
+                    <td class="payout-amount">$7,000</td>
+                    <td class="payout-count">3</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">22</td>
+                    <td class="nickname">자잇</td>
+                    <td class="payout-amount">$6,300</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">23</td>
+                    <td class="nickname">연결끈김</td>
+                    <td class="payout-amount">$6,000</td>
+                    <td class="payout-count">3</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">24</td>
+                    <td class="nickname">포쇼</td>
+                    <td class="payout-amount">$5,623</td>
+                    <td class="payout-count">2</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">25</td>
+                    <td class="nickname">xim</td>
+                    <td class="payout-amount">$5,500</td>
+                    <td class="payout-count">2</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">25</td>
+                    <td class="nickname">인자기</td>
+                    <td class="payout-amount">$5,500</td>
+                    <td class="payout-count">2</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">26</td>
+                    <td class="nickname">투모아쓰리모아</td>
+                    <td class="payout-amount">$5,000</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">27</td>
+                    <td class="nickname">두두</td>
+                    <td class="payout-amount">$4,520</td>
+                    <td class="payout-count">3</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">28</td>
+                    <td class="nickname">dgo</td>
+                    <td class="payout-amount">$4,500</td>
+                    <td class="payout-count">2</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">29</td>
+                    <td class="nickname">안진마</td>
+                    <td class="payout-amount">$3,600</td>
+                    <td class="payout-count">2</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">29</td>
+                    <td class="nickname">ok203</td>
+                    <td class="payout-amount">$3,600</td>
+                    <td class="payout-count">2</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">30</td>
+                    <td class="nickname">PROPER</td>
+                    <td class="payout-amount">$3,150</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">31</td>
+                    <td class="nickname">수밍님</td>
+                    <td class="payout-amount">$3,000</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">32</td>
+                    <td class="nickname">김프로</td>
+                    <td class="payout-amount">$2,700</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">33</td>
+                    <td class="nickname">프랍헌터</td>
+                    <td class="payout-amount">$2,589</td>
+                    <td class="payout-count">4</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">34</td>
+                    <td class="nickname">수유83</td>
+                    <td class="payout-amount">$2,300</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">35</td>
+                    <td class="nickname">리바이스00</td>
+                    <td class="payout-amount">$2,000</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">35</td>
+                    <td class="nickname">럭키호야</td>
+                    <td class="payout-amount">$2,000</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">35</td>
+                    <td class="nickname">자라</td>
+                    <td class="payout-amount">$2,000</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">36</td>
+                    <td class="nickname">덕두</td>
+                    <td class="payout-amount">$1,993</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">37</td>
+                    <td class="nickname">지우개당</td>
+                    <td class="payout-amount">$1,749</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">38</td>
+                    <td class="nickname">처음이에요11</td>
+                    <td class="payout-amount">$1,740</td>
+                    <td class="payout-count">2</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">39</td>
+                    <td class="nickname">강울</td>
+                    <td class="payout-amount">$1,665</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">40</td>
+                    <td class="nickname">오소로이</td>
+                    <td class="payout-amount">$1,600</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">41</td>
+                    <td class="nickname">닌닌</td>
+                    <td class="payout-amount">$1,500</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">41</td>
+                    <td class="nickname">오이</td>
+                    <td class="payout-amount">$1,500</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">42</td>
+                    <td class="nickname">박창현</td>
+                    <td class="payout-amount">$1,453</td>
+                    <td class="payout-count">1</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">43</td>
+                    <td class="nickname">ktrader81</td>
+                    <td class="payout-amount">$1,019</td>
+                    <td class="payout-count">1</td>
+                </tr>
+            </tbody>
+        </table>
 
-        <div class="award-section rank-2">
-            <div class="award-content">
-                <h2><span class="icon">🥈</span> 2위: 사즉생</h2>
-                <p><strong>출금 금액:</strong> $65,484</p>
-                <p><strong>출금 횟수:</strong> 6회</p>
-                <p>2위는 **사즉생**님입니다. 6만 5천 달러가 넘는 출금액과 6번의 출금 횟수는 꾸준한 수익 창출 능력을 여실히 보여줍니다.</p>
-            </div>
-        </div>
-
-        <div class="award-section rank-3">
-            <div class="award-content">
-                <h2><span class="icon">🥉</span> 3위: 할아버지</h2>
-                <p><strong>출금 금액:</strong> $56,652</p>
-                <p><strong>출금 횟수:</strong> 7회</p>
-                <p>3위는 **할아버지**님으로, 5만 6천 달러가 넘는 출금액과 7번의 출금 횟수를 기록했습니다. 연륜과 노하우가 묻어나는 안정적인 성과가 돋보입니다.</p>
-            </div>
-        </div>
-
-        <p class="footer-note">이 외에도 순위에 이름을 올린 모든 트레이더분들의 노고에 감사드립니다. 앞으로도 건승을 기원하며, 더 많은 분들이 명예의 전당에 오르기를 기대합니다!</p>
+        <p class="footer-note">이 랭킹은 2024년 10월부터 집계된 All Time 프랍 출금 기록을 기반으로 합니다. 모든 트레이더분들의 꾸준한 노력과 성과에 깊은 존경을 표합니다. 앞으로도 더 많은 성공적인 출금이 있기를 응원합니다!</p>
         <p class="signature">궁금한 점이 있다면 언제든지 문의해주세요.</p>
     </div>
 </body>
