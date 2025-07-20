@@ -3,311 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신랑 ♡ 신부 결혼합니다</title>
+    <title>프랍 트레이딩 명예의 전당</title>
     <style>
-        /* 기본 스타일 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
         body {
-            font-family: 'Noto Sans KR', sans-serif; /* 한국어 폰트 지정, 필요시 웹폰트 연결 */
-            line-height: 1.6;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f4f7f6;
             color: #333;
-            background-color: #f8f8f8;
+            line-height: 1.6;
             margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
             box-sizing: border-box;
-        }
-
-        h1, h2, h3 {
             text-align: center;
-            color: #555;
-            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 2.2em;
-            margin-top: 30px;
-            letter-spacing: 2px;
-        }
-
-        h2 {
-            font-size: 1.8em;
-            margin-top: 40px;
-        }
-
-        h3 {
-            font-size: 1.4em;
-            margin-top: 30px;
-        }
-
-        p {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .section {
-            padding: 40px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .section:last-child {
-            border-bottom: none;
-        }
-
-        /* 메인 섹션 */
-        .main-section .names {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #777;
+            color: #2c3e50;
+            font-size: 2.8em;
             margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
-        .main-section .date-time {
+
+        .header-description {
             font-size: 1.2em;
-            color: #888;
-            margin-bottom: 30px;
-        }
-        .main-section .message {
-            font-size: 1.1em;
-            line-height: 1.8;
-            text-align: justify;
-            padding: 0 20px;
-        }
-
-        /* 갤러리 섹션 (사진 추가 시) */
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .gallery img {
-            width: 100%;
-            max-width: 250px; /* 적당한 크기로 조절 */
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* 오시는 길 섹션 */
-        .location-info p {
-            text-align: center;
-            margin-bottom: 5px;
-        }
-        .location-info .map-image {
-            width: 90%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .transport-info {
-            text-align: left;
-            padding: 0 20px;
-            font-size: 0.95em;
-        }
-        .transport-info h4 {
-            font-size: 1.1em;
-            color: #666;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .transport-info ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .transport-info li {
-            margin-bottom: 8px;
-            text-align: center; /* 필요에 따라 left로 변경 가능 */
-        }
-        .transport-info .note {
-            font-size: 0.9em;
-            color: #999;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        /* 축하/전달 섹션 */
-        .contact-info .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 25px;
-            padding: 0 20px;
-        }
-        .contact-info .btn {
-            display: block;
-            width: 100%;
-            padding: 12px 20px;
-            background-color: #a0a0a0; /* 버튼 색상 */
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-        .contact-info .btn:hover {
-            background-color: #888;
-        }
-
-        .contact-info .account-info {
-            margin-top: 30px;
-            text-align: center;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-        .contact-info .account-info strong {
-            display: block;
-            margin-top: 5px;
             color: #555;
-        }
-        .contact-info .note-right {
-            text-align: right;
-            font-size: 0.9em;
-            color: #777;
-            margin-top: 20px;
-            padding-right: 20px;
-        }
-        .contact-info .text-right {
-            text-align: right;
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #777;
-            padding-right: 20px;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.85em;
-            color: #999;
-            margin-top: 30px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
         }
 
-        /* 반응형 디자인 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            h3 {
-                font-size: 1.2em;
-            }
-            .main-section .names {
-                font-size: 1.6em;
-            }
-            .main-section .date-time {
-                font-size: 1em;
-            }
-            .main-section .message {
-                font-size: 1em;
-                padding: 0 15px;
-            }
-            .transport-info {
-                padding: 0 15px;
-            }
-            .contact-info .btn {
-                font-size: 1em;
-                padding: 10px 15px;
-            }
+        .award-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .award-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .award-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+            filter: blur(5px);
+        }
+
+        .award-content {
+            position: relative;
+            z-index: 1;
+            padding: 10px;
+        }
+
+        .award-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            color: #fff; /* Default color, will be overridden */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .award-section h2 .icon {
+            margin-right: 15px;
+            font-size: 1.2em;
+            line-height: 1;
+        }
+
+        .award-section p {
+            font-size: 1.1em;
+            color: #f8f9fa; /* Default color, will be overridden */
+            margin-bottom: 10px;
+        }
+
+        .award-section p strong {
+            color: #fff;
+        }
+
+        /* Specific colors and backgrounds for each rank */
+        .rank-1 {
+            background: linear-gradient(135deg, #FFD700 0%, #FFB100 100%); /* Gold */
+            border: 3px solid #FFC107;
+        }
+        .rank-1 h2, .rank-1 p {
+            color: #8B4513; /* Darker brown for contrast */
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+        .rank-1 p strong {
+            color: #A0522D;
+        }
+
+
+        .rank-2 {
+            background: linear-gradient(135deg, #C0C0C0 0%, #A9A9A9 100%); /* Silver */
+            border: 3px solid #B0C4DE;
+        }
+        .rank-2 h2, .rank-2 p {
+            color: #2F4F4F; /* Dark slate gray */
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+        .rank-2 p strong {
+            color: #4682B4;
+        }
+
+        .rank-3 {
+            background: linear-gradient(135deg, #CD7F32 0%, #B87333 100%); /* Bronze */
+            border: 3px solid #D2B48C;
+        }
+        .rank-3 h2, .rank-3 p {
+            color: #5C4033; /* Darker brown */
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+        .rank-3 p strong {
+            color: #8B4513;
+        }
+
+
+        .footer-note {
+            font-size: 1em;
+            color: #666;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+
+        .signature {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 10px;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
+        <h1>프랍 트레이딩 명예의 전당</h1>
+        <p class="header-description">2024년 10월부터 시작된 올타임 출금 랭킹에서 빛나는 성과를 거둔 상위 3인에게 아낌없는 박수를 보냅니다!</p>
 
-        <section class="section main-section">
-            <p style="font-family: 'Times New Roman', serif; font-size: 1.5em; color: #888; letter-spacing: 1px; margin-bottom: 20px;">Wedding Invitation</p>
-            <p class="names">신랑 OOO &nbsp; ♡ &nbsp; 신부 OOO</p>
-            <p class="date-time">2025.09.06 SAT PM 1:00</p>
-            <h1>결혼합니다.</h1>
-            <p class="message">
-                하나님이 보내준 사람으로<br>
-                하나가 되는 뜻깊은 날을 맞이하게 되었습니다.<br>
-                서로에게 쉼과 위로가 되겠습니다.<br>
-                믿음과 소망 사랑을 잃지 않고 품어주며 살겠습니다.<br>
-                따뜻한 축복을 보내주시면 큰 힘이 되겠습니다.
-            </p>
-        </section>
-
-        <section class="section gallery-section">
-            <h2>Our Story</h2>
-            <div class="gallery">
-                <p style="color: #aaa; font-size: 0.9em;">(여기에 웨딩 사진을 추가해주세요)</p>
+        <div class="award-section rank-1">
+            <div class="award-content">
+                <h2><span class="icon">🥇</span> 1위: SpaceRanger7</h2>
+                <p><strong>출금 금액:</strong> $341,558</p>
+                <p><strong>출금 횟수:</strong> 9회</p>
+                <p>최고의 자리에 등극한 **SpaceRanger7**님은 압도적인 출금 금액과 꾸준한 성과로 모두의 귀감이 되고 있습니다. 9번의 출금은 그야말로 꾸준함의 대명사입니다.</p>
             </div>
-        </section>
+        </div>
 
-        <section class="section location-section">
-            <h2 style="font-family: 'Times New Roman', serif; font-size: 1.8em; color: #888; letter-spacing: 1px;">Location</h2>
-            <div class="location-info">
-                <p style="font-weight: bold; font-size: 1.1em; color: #555;">신당중앙교회</p>
-                <p>서울특별시 중구 다산로 165</p>
-                <img src="image_fed8bf.png" alt="신당중앙교회 약도" class="map-image">
+        <div class="award-section rank-2">
+            <div class="award-content">
+                <h2><span class="icon">🥈</span> 2위: 사즉생</h2>
+                <p><strong>출금 금액:</strong> $65,484</p>
+                <p><strong>출금 횟수:</strong> 6회</p>
+                <p>2위는 **사즉생**님입니다. 6만 5천 달러가 넘는 출금액과 6번의 출금 횟수는 꾸준한 수익 창출 능력을 여실히 보여줍니다.</p>
             </div>
+        </div>
 
-            <div class="transport-info">
-                <h4>오시는 길</h4>
-                <ul>
-                    <li><strong>지하철:</strong></li>
-                    <li>3·6호선 약수역 2번출구 (300m)</li>
-                    <li>5·6호선 청구역 1번출구 (200m)</li>
-                    <li><strong>버스:</strong></li>
-                    <li>신당동(청구역) : 142, 147, 0212, 6211</li>
-                </ul>
-                <p class="note">
-                    주차 공간이 협소하여, 가급적 따뜻한 마음으로<br>
-                    대중교통을 이용해주시면 감사하겠습니다.
-                </p>
+        <div class="award-section rank-3">
+            <div class="award-content">
+                <h2><span class="icon">🥉</span> 3위: 할아버지</h2>
+                <p><strong>출금 금액:</strong> $56,652</p>
+                <p><strong>출금 횟수:</strong> 7회</p>
+                <p>3위는 **할아버지**님으로, 5만 6천 달러가 넘는 출금액과 7번의 출금 횟수를 기록했습니다. 연륜과 노하우가 묻어나는 안정적인 성과가 돋보입니다.</p>
             </div>
-        </section>
+        </div>
 
-        <section class="section contact-info">
-            <h2>축하의 마음 전달</h2>
-            <p style="text-align: center;">
-                축하의 마음으로 참석해 주실<br>
-                모든 분을 정중히 모시고자 하오니,<br>
-                참석 여부를 알려주시면 감사하겠습니다.
-            </p>
-            <div class="btn-group">
-                <a href="tel:000-0000-0000" class="btn">신랑에게 연락하기</a> <a href="tel:000-0000-0000" class="btn">신부에게 연락하기</a> <a href="#" class="btn" onclick="alert('참석 여부 확인 링크 또는 기능이 필요합니다.'); return false;">참석 여부 전달하기</a>
-            </div>
-
-            <h3 style="margin-top: 50px;">새로운 시작을 축하하며</h3>
-            <p class="note-right">축하 화환은 정중히 사양합니다.<br>감사한 마음만 받겠습니다.</p>
-            <p class="text-right" style="margin-bottom: 30px;">
-                (단, 바른손플라워를 통한 화환 선물은 가능합니다.)
-            </p>
-            <div class="account-info">
-                <p><strong>신랑 측 계좌번호</strong></p>
-                <p>계좌번호: 000-00-000000 (예금주: 신랑 OOO)</p>
-                <p><strong>신부 측 계좌번호</strong></p>
-                <p>계좌번호: 000-00-000000 (예금주: 신부 OOO)</p>
-            </div>
-            <div class="btn-group" style="margin-top: 30px;">
-                <a href="#" class="btn" onclick="alert('화환 선물하기 페이지 또는 정보가 필요합니다.'); return false;">화환 선물하기 (바른손플라워)</a>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <p>&copy; 2025 신랑 OOO & 신부 OOO. All rights reserved.</p>
-        </footer>
+        <p class="footer-note">이 외에도 순위에 이름을 올린 모든 트레이더분들의 노고에 감사드립니다. 앞으로도 건승을 기원하며, 더 많은 분들이 명예의 전당에 오르기를 기대합니다!</p>
+        <p class="signature">궁금한 점이 있다면 언제든지 문의해주세요.</p>
     </div>
 </body>
 </html>
